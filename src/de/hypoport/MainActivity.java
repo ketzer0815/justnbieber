@@ -51,7 +51,7 @@ public class MainActivity extends ListActivity
 			if (resultCode == RESULT_OK) {
 				if (data != null) {
 					//TODO: Aktion verarbeiten
-					showToastMessage("Holz verfügbar");
+					showToastMessage(R.string.msg_wood_done);
 				  }
 			  }
 		  }		

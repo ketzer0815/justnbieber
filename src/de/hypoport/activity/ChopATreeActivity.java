@@ -4,7 +4,10 @@ import android.hardware.*;
 import android.os.*;
 import android.widget.*;
 import de.hypoport.*;
+import android.os.Vibrator;
 
+//Don't forget to include permission in AndroidManifest.xml file:
+//<uses-permission android:name="android.permission.VIBRATE"/>
 public class ChopATreeActivity extends ActivityEnhanced implements SensorEventListener
   {
 
@@ -14,7 +17,8 @@ public class ChopATreeActivity extends ActivityEnhanced implements SensorEventLi
 	private boolean isHitting = false;  
 	private long lastUpdate;
 	private ProgressBar progressBar; 
-
+	private Vibrator vibrator;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,7 @@ public class ChopATreeActivity extends ActivityEnhanced implements SensorEventLi
 		ImageView image = (ImageView) findViewById(R.id.chopatreeImageView);
 		image.setImageResource(R.drawable.tree);
 
+		vibrator= (Vibrator) getSystemService(VIBRATOR_SERVICE);
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE); 
 		lastUpdate = System.currentTimeMillis();
 
@@ -52,6 +57,10 @@ public class ChopATreeActivity extends ActivityEnhanced implements SensorEventLi
 			  } 
 			lastUpdate = actualTime; 
 			if (isHitting) { 
+				// Vibrate for 500 milliseconds
+				if(vibrator!=null){
+				  vibrator.vibrate(500);
+				}
 				progressBar.incrementProgressBy(Math.round(accelationSquareRoot * 2.5f));
 				if (progressBar.getProgress() >= 100) {
 					showToastMessage(R.string.msg_tree_down);

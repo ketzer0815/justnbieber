@@ -4,10 +4,11 @@
   <string name="app_name">JustNBieber</string>
   
   <!-- Menü -->
-  <string name="menu_chopatree">Chop a tree</string>
+  <string name="menu_chopatree">Holz hacken</string>
+  <string name="msg_wood_done">Holz verfügbar</string>
   
   <!-- ChopATreeActivity -->
-  <string name="title_chopatree">Baum fällen</string>
+  <string name="title_chopatree">Benutze das Gerät als Axt</string>
   <string name="msg_tree_down">Baum fääääällt!</string>
 
 </resources>

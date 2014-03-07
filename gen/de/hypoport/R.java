@@ -29,9 +29,10 @@ public final class R {
         /**  Menü 
          */
         public static final int menu_chopatree=0x7f040001;
-        public static final int msg_tree_down=0x7f040003;
+        public static final int msg_tree_down=0x7f040004;
+        public static final int msg_wood_done=0x7f040002;
         /**  ChopATreeActivity 
          */
-        public static final int title_chopatree=0x7f040002;
+        public static final int title_chopatree=0x7f040003;
     }
 }
